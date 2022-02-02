@@ -1,0 +1,13 @@
+<h1>Add a review for <%=@movie.title %></h1>
+
+<%= form_with model: [@movie,@review] do |form|%>
+	<div>
+		<%=form.label :message %>
+		<%=form.text_field :message, required:true %>
+	</div>
+	<div>
+		<%=form.label :stars %>
+		<%=form.text_field :stars, required:true %>
+	</div>
+	<%=form.submit "Add review"%>
+<%end%>

@@ -11,4 +11,15 @@ class Movie < ApplicationRecord
     def count_reviews 
         return self.reviews.count
     end
+    def avg_stars
+        if self.reviews.count == 0
+            return 0
+        end
+        stars_sum = 0
+        self.reviews.each do |r|
+            stars_sum += r.stars
+        end
+        puts stars_sum
+        return stars_sum / self.reviews.count
+    end
 end
