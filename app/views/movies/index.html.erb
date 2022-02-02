@@ -1,0 +1,9 @@
+<h1>Movies Index</h1>
+
+<% @movies.each do |movie| %>
+
+    <h3><%=movie.title%></h3>
+    <p><%= movie.genre%> - <%= movie.year%></p>
+    <p><%= movie.length%> minutes</p>
+
+<% end %>
