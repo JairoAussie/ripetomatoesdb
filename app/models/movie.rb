@@ -8,4 +8,8 @@ class Movie < ApplicationRecord
     has_many :performs
     #In order to connect movies and actors we have to do it through performs
     has_many :actors, through: :performs
+
+    def count_reviews
+        return self.reviews.count
+    end
 end
