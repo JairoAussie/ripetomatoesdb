@@ -7,4 +7,15 @@ class MoviesController < ApplicationController
     def show
         @movie = Movie.find(params[:id])
     end
+    def new
+        @movie = Movie.new
+    end
+    def create
+        Movie.create(title: movie_params[:title], genre: movie_params[:genre], year: movie_params[:year], length: movie_params[:length])
+        redirect_to movies_path
+    end
+
+    def movie_params
+        params.require(:movie).permit(:title, :genre, :year, :length)
+    end
 end
