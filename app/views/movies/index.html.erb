@@ -6,6 +6,6 @@
     <p>Year: <%= movie.year%></p>
     <p>Length: <%= movie.length%> minutes</p>
     <p><%= movie.actors.count%> actors</p>
-    <p><%= movie.count_reviews%> reviews</p>
-
+    <p><%= movie.reviews.count%> reviews</p>
+    <p><%= movie.average_rating%> ⭐️</p>
 <% end %>

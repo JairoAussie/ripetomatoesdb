@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # get '/movies/new', to: 'movies#new'
   # get '/movies/:id', to: 'movies#show', as: 'movie'
   # post '/movies', to: 'movies#create'
-  resources :movies do
-    resources :reviews
+  resources :movies, only:[:index, :show, :new, :create] do
+    resources :reviews, only:[:new, :create]
   end
   
   get '/actors', to: 'actors#index'
