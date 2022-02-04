@@ -37,7 +37,7 @@ a11 = Actor.create(name: 'Kirsten Dunst', dob: 1995)
 #a2
 #a3
 #a4
-r1 = Review.create(message: 'Absolutely stunning!', stars: 5, movie: m1)
+#r1 = Review.create(message: 'Absolutely stunning!', stars: 5, movie: m1)
 #r2
 #r3
 p1 = Perform.create(movie: m1, actor: a1, role: 'Maverick')

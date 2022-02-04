@@ -9,6 +9,6 @@
 <% end%>
 <h3>Reviews</h3>
 <%@movie.reviews.each do |review| %>
-    <p><%=review.message%> <%=review.stars%>⭐️</p>
+    <p><%=review.message%> <%=review.stars%>⭐️ - <b><%=review.user.username%></b> </p>
 <% end%>
 <%= link_to "Add review", new_movie_review_path(@movie.id) %> 
