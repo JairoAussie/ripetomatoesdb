@@ -1,5 +1,6 @@
 
 <h1><%= @movie.title%></h1>
+<%= link_to "Buy it for just $#{@movie.price}", new_movie_order_path(@movie.id)%></p>
 <p>Genre: <%= @movie.genre%></p>
 <p>Year: <%= @movie.year%></p>
 <p>Length: <%= @movie.length%> minutes</p>

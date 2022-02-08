@@ -1,0 +1,3 @@
+<p>Are you sure you want to buy <%=@movie.title%>?</p>
+<%=link_to "yes", movie_orders_path(@movie.id), method: 'post'%>
+<%=link_to "no", movie_path(@movie.id)%>
