@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
             currency: 'aud'
         )
 
+        puts charge
         
         @order = Order.create( movie: @movie, user: current_user, price: @movie.price)
         #
