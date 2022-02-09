@@ -1,23 +1,23 @@
 <h1>Add a movie </h1>
 
 <%= form_with model: @movie do |form| %>
-    <div>
+    <div class="row g-2">
         <%= form.label :title%>
         <%= form.text_field :title, required:true%>
     </div>
-    <div>
+    <div class="row g-2">
         <%= form.label :price%>
         <%= form.number_field :price, required:true%>
     </div>
-    <div>
+    <div class="row g-2">
         <%= form.label :genre%>
         <%= form.text_field :genre, required:true%>
     </div>
-    <div>
+    <div class="row g-2">
         <%= form.label :year%>
         <%= form.text_field :year, required:true%>
     </div>
-    <div>
+    <div class="row g-2">
         <%= form.label :length%>
         <%= form.text_field :length, required:true%>
     </div>

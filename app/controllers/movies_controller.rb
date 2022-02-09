@@ -16,8 +16,8 @@ class MoviesController < ApplicationController
         # Movie.create(title: movie_params[:title], genre: movie_params[:genre], year: movie_params[:year], length: movie_params[:length])
         begin
             Movie.create(movie_params)
-            flash.now[:notice] = 'Message sent!'
-            redirect_to movies_path
+            #flash.now[:notice] = 'Movie created'
+            redirect_to movies_path, notice: 'movie created'
         rescue StandardError => e
             flash[:error] = "Couldn't create the movie"
             flash.now[:alert] = 'Error while creating the movie!'
@@ -29,9 +29,9 @@ class MoviesController < ApplicationController
         begin
             @movie = Movie.find(params[:id])
         rescue StandardError => e
-            flash[:error] = e.message
+            #flash[:error] = e.message
             flash.now[:alert] = 'Wrong id, try with a valid one'
-            redirect_to movies_path, alert: 'wrong id!!'
+            redirect_to movies_path, alert: 'invalid id for a movie!!'
         end
     end
 
