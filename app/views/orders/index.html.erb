@@ -1,0 +1,7 @@
+<h1>My orders</h1>
+
+<% @orders.each do |order| %>
+    <h3><%=order.movie.title%></h3>
+    <p>$<%=order.price%></p>
+    <%= link_to "See receipt", "#{order.receipt_url}", target: :_blank %>
+<% end %>

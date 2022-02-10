@@ -4,6 +4,7 @@
     <% if user_signed_in? %>
 
         <%=link_to 'New movie', new_movie_path %>
+        <%=link_to 'My orders', my_orders_path %>
         <span><%=current_user.username %> </span>
         <%=link_to 'Sign Out', destroy_user_session_path, method: 'delete' %>
     <% else %>
