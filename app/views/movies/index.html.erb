@@ -2,6 +2,7 @@
 
 <% @movies.each do |movie| %>
     <h3><%= link_to movie.title, movie_path(movie.id)%></h3>
+    <p>$<%= movie.price%></p>
     <p>Genre: <%= movie.genre%></p>
     <p>Year: <%= movie.year%></p>
     <p>Length: <%= movie.length%> minutes</p>
