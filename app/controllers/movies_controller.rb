@@ -14,11 +14,23 @@ class MoviesController < ApplicationController
     end
     def create
         # Movie.create(title: movie_params[:title], genre: movie_params[:genre], year: movie_params[:year], length: movie_params[:length])
-        Movie.create(movie_params)
-        redirect_to movies_path
+        begin
+        movie = Movie.create(movie_params)
+        redirect_to movies_path, notice: "#{movie.title} was created successfully"
+        rescue StandardError => e
+            puts e.message
+            redirect_to movies_path, notice: "#{movie.title} wasn't created"
+        end
     end
     def find_movie
-        @movie = Movie.find(params[:id])
+        begin
+            @movie = Movie.find(params[:id])
+        rescue StandardError => e
+            puts e.message
+            #flash[:error] = e.message
+            redirect_to movies_path, alert: "This id #{params[:id]} doesn't exist in the DB"
+        end
+
     end
 
     def movie_params
