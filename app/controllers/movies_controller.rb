@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-    before_action :find_movie, only:[:show, :update, :destroy]
+    before_action :find_movie, only:[:show, :edit, :update, :destroy]
     before_action :authenticate_user! , only: [:new, :create]
     def index
         @movies = Movie.all
@@ -22,6 +22,22 @@ class MoviesController < ApplicationController
             redirect_to movies_path, notice: "#{movie.title} wasn't created"
         end
     end
+    def destroy
+        title= @movie.title
+        @movie.destroy
+        #Movie.destroy(params[:id])
+        redirect_to movies_path, notice: "#{title} was deleted successfully"
+    end
+
+    def edit
+
+    end
+
+    def update
+        @movie.update(movie_params)
+        redirect_to @movie, notice: "#{@movie.title} was updated successfully"
+    end
+
     def find_movie
         begin
             @movie = Movie.find(params[:id])

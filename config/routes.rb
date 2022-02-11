@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # post '/movies', to: 'movies#create'
   root to: "movies#index"
 
-  resources :movies, only:[:index, :show, :new, :create] do
+  resources :movies do
     resources :reviews, only:[:new, :create]
     resources :orders, only:[:new, :create]
   end
