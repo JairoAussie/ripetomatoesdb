@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: jairo-coder-academy
+  api_key: '327426852913276'
+  api_secret: "NFsjzozo08dNxD-e859QqSrTLKo"
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: jairo-coder-academy
+  api_key: '327426852913276'
+  api_secret: "NFsjzozo08dNxD-e859QqSrTLKo"
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: jairo-coder-academy
+  api_key: '327426852913276'
+  api_secret: "NFsjzozo08dNxD-e859QqSrTLKo"
+  enhance_image_tag: true
+  static_file_support: false
