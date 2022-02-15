@@ -21,5 +21,9 @@
         <%= form.label :length%>
         <%= form.number_field :length, required:true%>
     </div>
+    <div class="row g-2">
+        <%= form.label :picture%>
+        <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg' %>
+    </div>
     <%=form.submit "Add movie" %>
 <%end%>
