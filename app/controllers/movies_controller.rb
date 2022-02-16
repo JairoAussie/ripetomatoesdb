@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
     before_action :find_movie, only:[:show, :edit, :update, :destroy]
-    before_action :authenticate_user! , only: [:new, :create]
+    before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destroy]
+    before_action :isAdmin,  only: [:new, :create, :edit, :update, :destroy]
     def index
         @movies = Movie.all
     end
@@ -51,5 +52,11 @@ class MoviesController < ApplicationController
 
     def movie_params
         params.require(:movie).permit(:title, :genre, :year, :length, :price)
+    end
+
+    def isAdmin
+        if !current_user.admin
+            redirect_to movies_path, alert: "You need administrator rights for this action"
+        end
     end
 end

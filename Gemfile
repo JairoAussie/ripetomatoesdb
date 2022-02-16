@@ -66,6 +66,6 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'bootstrap', '~> 5.1.3'
 
-gem 'jquery-railsq'
+gem 'jquery-rails'
 
 
