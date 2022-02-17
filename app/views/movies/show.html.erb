@@ -14,6 +14,7 @@
     <p><%=review.message%> <%=review.stars%>⭐️ - <b><%=review.user.username%></b> </p>
 <% end%>
 <%= link_to "Add review", new_movie_review_path(@movie.id) %> 
-
-<%= link_to "Edit movie", edit_movie_path(@movie.id) %> 
-<%= link_to "Delete movie", @movie, method: 'delete', data: {confirm: 'Are you sure?' } %> 
+<% if user_signed_in? and current_user.admin %>
+    <%= link_to "Edit movie", edit_movie_path(@movie.id) %> 
+    <%= link_to "Delete movie", @movie, method: 'delete', data: {confirm: 'Are you sure?' } %> 
+<% end %>
