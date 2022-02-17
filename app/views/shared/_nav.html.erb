@@ -6,7 +6,11 @@
 
             <%=link_to 'New movie', new_movie_path, class:"navbar-brand"%>
             <%=link_to 'My orders', my_orders_path, class:"navbar-brand" %>
-            <span class="navbar-brand"><%=current_user.username %> </span>
+            <% if current_user.avatar.attached? %>
+                <%= cl_image_tag current_user.avatar.key, :width=>75, :radius=>"max", :crop=>"fill" %>
+            <% else %>
+                <span class="navbar-brand"><%=current_user.username %> </span>
+            <% end %>
             <%=link_to 'Sign Out', destroy_user_session_path, method: 'delete', class:"navbar-brand" %>
         <% else %>
             <%=link_to 'Sign In', new_user_session_path, class:"navbar-brand" %>
